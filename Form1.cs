@@ -20,19 +20,21 @@ namespace Test
 
         public bool select(Student newRegister)
         {
-            foreach (var student in db.students)
-            {
-                if (newRegister.Name == student.Name && newRegister.FamilyName == student.FamilyName)
-                {
-                    return true;
-                }
-            }
-            return false;
+            return db.students.Any(x => x.Name == newRegister.Name && x.FamilyName == newRegister.FamilyName);
+            //foreach (var student in db.students)
+            //{
+            //    if (newRegister.Name == student.Name && newRegister.FamilyName == student.FamilyName)
+            //    {
+            //        return true;
+            //    }
+            //}
+            //return false;
         }
          public bool Register(Student form)
         {
             if (select(form) != true)
             {
+                
                 if (form.Age >= 18  )
                 {
                     db.students.Add(new Student() { Name = form.Name, FamilyName = form.FamilyName, Age = form.Age, Mark = form.Mark });
@@ -76,17 +78,19 @@ namespace Test
 
         private void button4_Click(object sender, EventArgs e)
         {
-            List<Student> AllFailedStudents = new List<Student>();
 
-            foreach (var person in db.students )
-            {
-                if(person.Mark <= 15)
-                {
-                    AllFailedStudents.Add(person);
-                    dataGridView2.DataSource = AllFailedStudents.ToList();
-                }
-                
-            } 
+            var q = db.students.Where(x => x.Mark <= 15);
+            dataGridView2.DataSource = q.ToList();
+            //List<Student> AllFailedStudents = new List<Student>();
+            //foreach (var person in db.students )
+            //{
+            //    if(person.Mark <= 15)
+            //    {
+            //        AllFailedStudents.Add(person);
+            //        dataGridView2.DataSource = AllFailedStudents.ToList();
+            //    }
+
+            //} 
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -96,13 +100,15 @@ namespace Test
 
         private void button2_Click(object sender, EventArgs e)
         {
-            foreach (var item in Controls)
-            {
-                if (item.GetType().ToString() == "System.Windows.Forms.TextBox")
-                {
-                    (item as TextBox).Clear();
-                }
-            }
+            
+            
+            //foreach (var item in Controls)
+            //{
+            //    if (item.GetType().ToString() == "System.Windows.Forms.TextBox")
+            //    {
+            //        (item as TextBox).Clear();
+            //    }
+            //}
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -120,17 +126,20 @@ namespace Test
 
         private void button7_Click(object sender, EventArgs e)
         {
-            List<Student> searchList=new List<Student>();
-            foreach(var student in db.students)
-            {
+            var q = from i in db.students where i.Name.Contains(textBox5.Text) ||  i.FamilyName.Contains(textBox5.Text) select i;
+            dataGridView1.DataSource = null;
+             dataGridView1.DataSource =q.ToList();
 
-                if (student.Name.Contains(textBox5.Text) || student.FamilyName.Contains(textBox5.Text))
-                {
-                    searchList.Add(student);
-                    dataGridView1.DataSource = null;
-                    dataGridView1.DataSource =searchList.ToList();
-                }
-            }
+            //foreach(var student in db.students)
+            //{
+
+            //    if (student.Name.Contains(textBox5.Text) || student.FamilyName.Contains(textBox5.Text))
+            //    {
+            //        searchList.Add(student);
+            //        dataGridView1.DataSource = null;
+            //        dataGridView1.DataSource =searchList.ToList();
+            //    }
+            //}
         }
     }
  
