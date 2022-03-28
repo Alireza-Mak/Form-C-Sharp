@@ -1,0 +1,16 @@
+C:\Users\negin\Desktop\C#\Test\Test\bin\Debug\Test.exe.config
+C:\Users\negin\Desktop\C#\Test\Test\bin\Debug\Test.exe
+C:\Users\negin\Desktop\C#\Test\Test\bin\Debug\Test.pdb
+C:\Users\negin\Desktop\C#\Test\Test\bin\Debug\EntityFramework.dll
+C:\Users\negin\Desktop\C#\Test\Test\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\negin\Desktop\C#\Test\Test\bin\Debug\EntityFramework.xml
+C:\Users\negin\Desktop\C#\Test\Test\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\negin\Desktop\C#\Test\Test\obj\Debug\Test.csproj.AssemblyReference.cache
+C:\Users\negin\Desktop\C#\Test\Test\obj\Debug\Test.csproj.SuggestedBindingRedirects.cache
+C:\Users\negin\Desktop\C#\Test\Test\obj\Debug\Test.Form1.resources
+C:\Users\negin\Desktop\C#\Test\Test\obj\Debug\Test.Properties.Resources.resources
+C:\Users\negin\Desktop\C#\Test\Test\obj\Debug\Test.csproj.GenerateResource.cache
+C:\Users\negin\Desktop\C#\Test\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+C:\Users\negin\Desktop\C#\Test\Test\obj\Debug\Test.csproj.CopyComplete
+C:\Users\negin\Desktop\C#\Test\Test\obj\Debug\Test.exe
+C:\Users\negin\Desktop\C#\Test\Test\obj\Debug\Test.pdb
